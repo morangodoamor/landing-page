@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Método para Faturar R$5.000 em 2 Dias com Morango do Amor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-vermelho-principal: #D7263D;
+            --cor-rosa-vibrante: #F26A8D;
+            --cor-rosa-fundo: #FFF5F7;
+            --cor-branco: #FFFFFF;
+            --cor-texto: #1E1E1E;
+            --cor-texto-suave: #4A4A4A;
+            --cor-dark: #1A0B0D;
+            --sombra-card: 0 10px 30px rgba(215, 38, 61, 0.08);
+            --sombra-botao: 0 10px 25px rgba(215, 38, 61, 0.3);
+            --border-radius-padrao: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--cor-texto);
+            background-color: var(--cor-branco);
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--cor-vermelho-principal); }
+        strong { color: var(--cor-vermelho-principal); font-weight: 700; }
+
+        /* --- BARRA DE URGÊNCIA --- */
+        .urgency-bar {
+            background: linear-gradient(90deg, var(--cor-rosa-vibrante), var(--cor-vermelho-principal));
+            color: var(--cor-branco);
+            padding: 12px;
+            text-align: center;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            font-size: 1em;
+        }
+        .urgency-bar-icon { animation: pulse 1.5s infinite; display: inline-block; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        /* --- SEÇÕES --- */
+        .section { padding: 100px 0; }
+        .section-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .section-title { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 20px; }
+        .section-subtitle { font-size: 1.25rem; max-width: 700px; margin: 0 auto 60px; color: var(--cor-texto-suave); }
+        .section-title::after {
+            content: '';
+            display: block;
+            margin: 15px auto 0;
+            width: 80px; height: 5px;
+            background: var(--cor-vermelho-principal);
+            border-radius: 3px;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            background-color: var(--cor-rosa-fundo);
+            padding: 100px 0 80px;
+        }
+        .header h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1.1;
+            background: linear-gradient(90deg, var(--cor-rosa-vibrante), var(--cor-vermelho-principal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            max-width: 750px;
+            margin: 25px auto 40px;
+            font-weight: 500;
+            color: var(--cor-texto-suave);
+        }
+        
+        /* --- BOTÃO CTA --- */
+        .cta-button {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #F26A8D, #D7263D);
+            color: var(--cor-branco);
+            padding: 20px 40px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 50px;
+            box-shadow: var(--sombra-botao);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(215, 38, 61, 0.4);
+        }
+        .button-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 10px;
+            color: var(--cor-branco);
+            opacity: 0.9;
+            text-transform: none;
+        }
+        .lock-icon { width: 16px; height: 16px; }
+
+        /* --- CARDS DE BENEFÍCIOS / PROBLEMAS --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+            width: 100%;
+        }
+        .benefit-card {
+            background: var(--cor-branco);
+            padding: 30px;
+            border-radius: var(--border-radius-padrao);
+            border: 1px solid #eee;
+            box-shadow: var(--sombra-card);
+        }
+        .benefit-card h4 { font-size: 1.3rem; margin-bottom: 10px; }
+        .benefit-card p { font-size: 1rem; color: var(--cor-texto-suave); }
+
+        /* --- SEÇÃO DE CONTEÚDO (VALUE STACKING) --- */
+        .content-section { background-color: var(--cor-dark); color: var(--cor-branco); }
+        .content-section .section-title, .content-section h3 { color: var(--cor-branco); }
+        .content-section .section-title::after { background: var(--cor-rosa-vibrante); }
+        .content-section .section-subtitle { color: rgba(255,255,255,0.8); }
+
+        .value-stack {
+            border: 2px solid var(--cor-rosa-vibrante);
+            border-radius: var(--border-radius-padrao);
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .stack-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-align: left;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .stack-item:last-child { border-bottom: none; }
+        .stack-item .icon { font-size: 2.5rem; }
+        .stack-item .description h4 { font-size: 1.3rem; color: var(--cor-rosa-vibrante); }
+        .stack-item .description p { color: rgba(255,255,255,0.8); }
+        .stack-item .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-left: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        .total-value {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .total-value span {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        /* --- CAIXA DE PREÇO --- */
+        .price-box {
+            background: var(--cor-branco);
+            border: 3px solid var(--cor-vermelho-principal);
+            padding: 40px;
+            border-radius: var(--border-radius-padrao);
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        .price-box .price-tag {
+            background-color: var(--cor-vermelho-principal);
+            color: var(--cor-branco);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .price-box .old-price { font-size: 2rem; text-decoration: line-through; color: #aaa; }
+        .price-box .new-price { font-size: 5.5rem; font-weight: 900; color: var(--cor-vermelho-principal); line-height: 1; margin: 10px 0; }
+        .installments {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--cor-rosa-fundo);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--cor-vermelho-principal);
+            display: inline-block;
+        }
+        
+        /* --- DEPOIMENTOS --- */
+        .testimonial-section { background-color: var(--cor-rosa-fundo); }
+        .testimonial {
+            background: var(--cor-branco);
+            padding: 40px;
+            border-radius: var(--border-radius-padrao);
+            box-shadow: var(--sombra-card);
+            max-width: 650px;
+            margin: 0 auto 30px;
+            width: 100%;
+        }
+        .testimonial p { font-size: 1.1rem; font-style: italic; color: var(--cor-texto-suave); }
+        .testimonial .author { font-weight: 700; margin-top: 20px; display: block; color: var(--cor-rosa-vibrante); }
+
+        /* --- GARANTIA --- */
+        .guarantee img { width: 100px; margin-bottom: 20px; }
+        .guarantee p { max-width: 700px; margin: 0 auto; }
+
+        /* --- FAQ --- */
+        .faq-item { width: 100%; }
+        .faq-item details {
+            background: var(--cor-branco);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius-padrao);
+            box-shadow: var(--sombra-card);
+            text-align: left;
+        }
+        .faq-item summary { 
+            padding: 25px; 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+            cursor: pointer; 
+            list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-answer { padding: 0 25px 25px; color: var(--cor-texto-suave); }
+
+        /* --- FOOTER --- */
+        .footer { background: #1E1E1E; color: #ccc; text-align: center; padding: 40px 20px; }
+
+    </style>
+</head>
+<body>
+    <div class="urgency-bar">
+        <span class="urgency-bar-icon">🔥</span> OFERTA DE LANÇAMENTO: 85% DE DESCONTO TERMINA HOJE! <span class="urgency-bar-icon">🔥</span>
+    </div>
+
+    <header class="header">
+        <div class="container section-inner">
+            <h1>O Plano Exato Para Faturar <strong>R$ 5.000,00</strong> Em Apenas <strong>2 Dias</strong></h1>
+            <p class="subtitle">Descubra o método passo a passo para transformar o doce que é febre nacional em um negócio de alta lucratividade, mesmo que você esteja começando do absoluto zero.</p>
+            <a href="#oferta" class="cta-button">
+                QUERO O MÉTODO COMPLETO
+                <span class="button-subtitle">
+                    <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Compra Segura e Acesso Imediato
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <div class="container section-inner">
+                <h2 class="section-title">Se Você se Identifica com Isso...</h2>
+                <p class="section-subtitle">...então você está no lugar certo.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>BUSCA UMA RENDA EXTRA URGENTE</h4>
+                        <p>Você precisa de dinheiro rápido para pagar contas, fazer uma viagem ou simplesmente ter um alívio financeiro no final do mês.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>NÃO SABE POR ONDE COMEÇAR</h4>
+                        <p>O sonho de ter um negócio próprio parece distante e complicado. Você precisa de um plano claro e direto ao ponto.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>JÁ SE FRUSTROU COM DOCES</h4>
+                        <p>Já tentou vender antes, mas se perdeu na precificação, na divulgação ou a receita não deu certo como esperava.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section content-section">
+             <div class="container section-inner">
+                <h2 class="section-title">Tudo o que Você Recebe Hoje:</h2>
+                 <p class="section-subtitle">Este não é apenas um livro de receitas. É um plano de negócios completo para o seu sucesso.</p>
+                
+                 <div class="value-stack">
+                     <div class="stack-item">
+                         <div class="icon">📕</div>
+                         <div class="description">
+                             <h4>O Guia "Fábrica de Dinheiro"</h4>
+                             <p>O método completo, com a receita secreta, plano de produção e estratégias de venda.</p>
+                         </div>
+                         <div class="price">R$ 69,90</div>
+                     </div>
+                     <div class="stack-item">
+                         <div class="icon">🧮</div>
+                         <div class="description">
+                             <h4>BÔNUS 1: Planilha de Lucro Automática</h4>
+                             <p>A ferramenta anti-prejuízo que calcula seu preço de venda e lucro exato em segundos.</p>
+                         </div>
+                         <div class="price">R$ 97,00</div>
+                     </div>
+                     <div class="stack-item">
+                         <div class="icon">🎨</div>
+                         <div class="description">
+                             <h4>BÔNUS 2: Kit de Divulgação Profissional</h4>
+                             <p>Templates prontos para Instagram e WhatsApp. Deixe seu perfil irresistível.</p>
+                         </div>
+                         <div class="price">R$ 50,00</div>
+                     </div>
+                     <div class="stack-item">
+                         <div class="icon">✍️</div>
+                         <div class="description">
+                             <h4>BÔNUS 3: Scripts de Venda Prontos</h4>
+                             <p>Mensagens testadas que transformam curiosos em clientes. É só copiar, colar e vender.</p>
+                         </div>
+                         <div class="price">R$ 50,00</div>
+                     </div>
+                     
+                     <div class="total-value">
+                         <p>Valor total: <span>R$ 266,90</span></p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="oferta" class="section">
+            <div class="container section-inner">
+                <h2 class="section-title">Sua Oferta Especial de Lançamento</h2>
+                <div class="price-box">
+                    <div class="price-tag">OFERTA POR TEMPO LIMITADO</div>
+                    <p>Leve tudo isso hoje por um preço simbólico:</p>
+                    <p class="old-price">De R$ 266,90</p>
+                    <h3 class="new-price">Por R$ 9,90</h3>
+                    <div class="installments">ou 12x de R$ 0,83</div>
+                    
+                    <a href="https://pay.hotmart.com/K101030996H" class="cta-button">
+                        QUERO MEU ACESSO COM 85% OFF
+                        <span class="button-subtitle">
+                             <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                             Clique aqui antes que a oferta acabe
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonial-section">
+            <div class="container section-inner">
+                <h2 class="section-title">Eles Aplicaram o Método. Veja os Resultados:</h2>
+                <div class="testimonial">
+                    <p>"Estava cética, mas no primeiro fim de semana seguindo o guia à risca, eu vendi tudo! Foram mais de R$ 5.120 no meu bolso. Eu paguei dívidas e finalmente respirei aliviada. Este guia mudou tudo!"</p>
+                    <span class="author">★★★★★ - Juliana M., Salvador/BA</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Estava desempregada e desesperada. Peguei dinheiro emprestado para começar e em 3 dias, vendendo na porta da faculdade, fiz R$ 4.890. Hoje, o Morango do Amor é a minha principal fonte de renda!"</p>
+                    <span class="author">★★★★★ - Fernanda L., São Paulo/SP</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section guarantee">
+             <div class="container section-inner">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNENzI2M0QiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zaGllbGQtY2hlY2siPjxwYXRoIGQ9Ik0xMiAyMnMtOC00LTgtMTBWNWw4LTUgOCAxMCA1IDV6Ii8+PHBhdGggZD0ibTkgMTIgMiAyIDQtNCIvPjwvc3ZnPg==" alt="Selo de Garantia">
+                <h2 class="section-title">Seu Risco é Absolutamente ZERO!</h2>
+                <h3>Garantia Incondicional de 7 Dias</h3>
+                <p>Eu confio tanto no poder deste guia que o risco é todo meu. Se em 7 dias você não amar o conteúdo e não se sentir 100% preparado(a) para faturar, basta enviar um e-mail. Eu devolvo todo o seu dinheiro. Simples assim, sem perguntas e sem ressentimentos.</p>
+            </div>
+        </section>
+
+        <section class="section faq-section">
+             <div class="container section-inner">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <div class="faq-item">
+                    <details>
+                        <summary>Preciso de experiência para começar?</summary>
+                        <div class="faq-answer"><p>Absolutamente não. O guia foi criado para iniciantes, com um passo a passo tão detalhado que é praticamente à prova de erros.</p></div>
+                    </details>
+                 </div>
+                 <div class="faq-item">
+                    <details>
+                        <summary>Como recebo o material?</summary>
+                        <div class="faq-answer"><p>O acesso ao guia e a todos os bônus é imediato após a confirmação do pagamento. Você receberá um link seguro por e-mail para acessar de qualquer dispositivo.</p></div>
+                    </details>
+                 </div>
+                 <div class="faq-item">
+                    <details>
+                        <summary>É realmente possível faturar R$ 5.000 em 2 dias?</summary>
+                        <div class="faq-answer"><p>Sim, é uma meta totalmente realista e o guia mostra o plano para isso. Vender 250 unidades a R$ 20,00 resulta em R$ 5.000. O método ensina como produzir essa quantidade e, o mais importante, como usar o marketing para vendê-la rapidamente.</p></div>
+                    </details>
+                 </div>
+            </div>
+        </section>
+
+         <section class="section">
+            <div class="container section-inner">
+                 <h2 class="section-title">Sua Última Chance de Entrar com Desconto</h2>
+                <div class="price-box" style="border-color: var(--cor-rosa-vibrante); box-shadow: 0 15px 40px rgba(242, 106, 141, 0.2);">
+                     <p>Amanhã, esta oferta não estará mais aqui. A decisão de mudar sua vida financeira é sua. E o momento é <strong>agora</strong>.</p>
+                     <p class="old-price">De R$ 266,90</p>
+                     <h3 class="new-price">Por R$ 9,90</h3>
+                     <div class="installments">ou 12x de R$ 0,83</div>
+                    <a href="https://pay.hotmart.com/K101030996H" class="cta-button">
+                        QUERO MUDAR DE VIDA!
+                        <span class="button-subtitle">
+                           <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            Garantir 85% de Desconto
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Desenvolvido com carinho por Receitas do Amor.</p>
+        <p>Todos os direitos reservados - 2025</p>
+        <p style="font-size: 0.8em; color: #888; max-width: 600px; margin: 15px auto 0;">Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados, pois eles podem variar de pessoa para pessoa.</p>
+    </footer>
+
+</body>
+</html>
